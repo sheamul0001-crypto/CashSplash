@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CashSplash</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>💸 CashSplash</h1>
+        <p class="subtitle">Real-time currency conversion</p>
+
+        <form method="POST">
+            <input
+                type="number"
+                name="amount"
+                placeholder="Enter amount"
+                step="0.01"
+                min="0"
+                required
+            >
+
+            <div class="currency-row">
+                <select name="from_currency">
+                    {% for currency in currencies %}
+                        <option value="{{ currency }}" {% if currency == from_currency %}selected{% endif %}>
+                            {{ currency }}
+                        </option>
+                    {% endfor %}
+                </select>
+
+                <span class="arrow">→</span>
+
+                <select name="to_currency">
+                    {% for currency in currencies %}
+                        <option value="{{ currency }}" {% if currency == to_currency %}selected{% endif %}>
+                            {{ currency }}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <button type="submit">Convert</button>
+        </form>
+
+        {% if result is not none %}
+            <div class="result">
+                {{ amount }} {{ from_currency }} = <strong>{{ result }} {{ to_currency }}</strong>
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
