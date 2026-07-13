@@ -31,7 +31,7 @@
                     {% endfor %}
                 </select>
 
-                <span class="arrow">→</span>
+                <button type="button" class="swap-btn" onclick="swapCurrencies()">⇆</button>
 
                 <select name="to_currency">
                     {% for currency in currencies %}
@@ -53,5 +53,15 @@
         {% endif %}
     </div>
 
+    <script>
+    function swapCurrencies() {
+        const from = document.querySelector('select[name="from_currency"]');
+        const to = document.querySelector('select[name="to_currency"]');
+        const temp = from.value;
+        from.value = to.value;
+        to.value = temp;
+    }
+    </script> 
+    
 </body>
 </html>

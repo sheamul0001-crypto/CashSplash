@@ -107,3 +107,21 @@ button:hover {
     font-size: 0.85rem;
     color: #8888aa;
 }
+
+.swap-btn {
+    background: none;
+    border: 2px solid #00d4aa;
+    color: #00d4aa;
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.swap-btn:hover {
+    background-color: #00d4aa;
+    color: #0f1117;
+}
