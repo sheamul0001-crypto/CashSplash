@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
 import requests
+from collections import deque
 
 app = Flask(__name__)
+history = deque(maxlen=5)
 
 def get_rates(base_currency):
     try:
@@ -36,6 +38,7 @@ def home():
             rate = rates[to_currency]
             result = round(amount * rate, 2)
             rate_display = round(rate, 4)
+            history.appendleft(f"{amount} {from_currency} = {result} {to_currency}")
         else:
             rate_display = None
 
@@ -47,7 +50,8 @@ def home():
         to_currency=to_currency,
         currencies=currencies,
         rate_display=rate_display if result else None,
-        error=error if request.method == "POST" and not result else None
+        error=error if request.method == "POST" and not result else None,
+        history=list(history)
     )
 
 if __name__ == "__main__":

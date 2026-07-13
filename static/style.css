@@ -146,3 +146,35 @@ button:hover {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
+
+.history {
+    margin-top: 24px;
+    padding: 16px;
+    background-color: #252840;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.history h3 {
+    font-size: 0.9rem;
+    color: #8888aa;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.history ul {
+    list-style: none;
+    padding: 0;
+}
+
+.history li {
+    padding: 6px 0;
+    border-bottom: 1px solid #2e3250;
+    font-size: 0.95rem;
+    color: #ffffff;
+}
+
+.history li:last-child {
+    border-bottom: none;
+}

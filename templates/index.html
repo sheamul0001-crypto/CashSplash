@@ -60,6 +60,18 @@
                 <p class="rate">Rate: 1 {{ from_currency }} = {{ rate_display }} {{ to_currency }}</p>
             </div>
         {% endif %}
+
+        {% if history %}
+            <div class="history">
+                <h3>Recent Conversions</h3>
+                <ul>
+                    {% for item in history %}
+                        <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+        
     </div>
 
     <script>
