@@ -48,6 +48,7 @@
         {% if result is not none %}
             <div class="result">
                 {{ amount }} {{ from_currency }} = <strong>{{ result }} {{ to_currency }}</strong>
+                <p class="rate">Rate: 1 {{ from_currency }} = {{ rate_display }} {{ to_currency }}</p>
             </div>
         {% endif %}
     </div>

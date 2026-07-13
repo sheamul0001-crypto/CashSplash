@@ -101,3 +101,9 @@ button:hover {
 .result strong {
     font-size: 1.5rem;
 }
+
+.rate {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #8888aa;
+}

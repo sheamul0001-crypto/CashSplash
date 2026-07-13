@@ -24,6 +24,7 @@ def home():
         rates = get_rates(from_currency)
         rate = rates[to_currency]
         result = round(amount * rate, 2)
+        rate_display = round(rate, 4)
 
     return render_template(
         "index.html",
@@ -31,7 +32,8 @@ def home():
         amount=amount,
         from_currency=from_currency,
         to_currency=to_currency,
-        currencies=currencies
+        currencies=currencies,
+        rate_display=rate_display if result else None
     )
 
 if __name__ == "__main__":
