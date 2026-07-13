@@ -4,15 +4,19 @@ A real-time currency conversion web application built with Python and Flask.
 
 ## Features
 
-- Convert between 7 major currencies (GBP, USD, EUR, JPY, CAD, AUD, CHF)
+- Convert between 15 major currencies (GBP, USD, EUR, JPY, CAD, AUD, CHF, CNY, INR, MXN, SGD, HKD, NOK, SEK, NZD)
 - Live exchange rates fetched from a real-time API
+- Currency swap button to instantly flip from/to currencies
+- Exchange rate display alongside each conversion
+- Conversion history showing your last 5 conversions
+- Error handling for API timeouts and connection failures
+- Loading spinner on form submission
 - Clean, responsive UI built with HTML and CSS
-- Built with Flask, handling HTTP requests and server-side logic
 
 ## Tech Stack
 
 - **Backend:** Python, Flask
-- **Frontend:** HTML, CSS
+- **Frontend:** HTML, CSS, JavaScript
 - **API:** ExchangeRate-API (live rates)
 - **Version Control:** Git & GitHub
 
