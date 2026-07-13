@@ -19,7 +19,7 @@ def get_rates(base_currency):
 
 @app.route("/", methods=["GET", "POST"])
 def home():
-    currencies = ["GBP", "USD", "EUR", "JPY", "CAD", "AUD", "CHF"]
+    currencies = ["GBP", "USD", "EUR", "JPY", "CAD", "AUD", "CHF", "CNY", "INR", "MXN", "SGD", "HKD", "NOK", "SEK", "NZD"]
     result = None
     amount = None
     from_currency = "GBP"

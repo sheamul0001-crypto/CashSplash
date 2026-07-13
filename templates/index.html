@@ -12,7 +12,7 @@
         <h1>💸 CashSplash</h1>
         <p class="subtitle">Real-time currency conversion</p>
 
-        <form method="POST">
+        <form method="POST" onsubmit="showSpinner()">
             <input
                 type="number"
                 name="amount"
@@ -42,9 +42,12 @@
                 </select>
             </div>
 
-            <button type="submit">Convert</button>
+            <button type="submit" id="convert-btn">
+                <span id="btn-text">Convert</span>
+                <span id="spinner" style="display:none;">⏳</span>
+            </button>
         </form>
-        
+
         {% if error %}
             <div class="error">
                 ⚠️ {{ error }}
@@ -60,14 +63,20 @@
     </div>
 
     <script>
-    function swapCurrencies() {
-        const from = document.querySelector('select[name="from_currency"]');
-        const to = document.querySelector('select[name="to_currency"]');
-        const temp = from.value;
-        from.value = to.value;
-        to.value = temp;
-    }
-    </script> 
+        function swapCurrencies() {
+            const from = document.querySelector('select[name="from_currency"]');
+            const to = document.querySelector('select[name="to_currency"]');
+            const temp = from.value;
+            from.value = to.value;
+            to.value = temp;
+        }
+
+        function showSpinner() {
+            document.getElementById('btn-text').style.display = 'none';
+            document.getElementById('spinner').style.display = 'inline';
+            document.getElementById('convert-btn').disabled = true;
+        }
+    </script>
 
 </body>
 </html>
