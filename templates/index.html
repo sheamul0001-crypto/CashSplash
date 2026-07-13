@@ -44,6 +44,12 @@
 
             <button type="submit">Convert</button>
         </form>
+        
+        {% if error %}
+            <div class="error">
+                ⚠️ {{ error }}
+            </div>
+        {% endif %}
 
         {% if result is not none %}
             <div class="result">
@@ -62,6 +68,6 @@
         to.value = temp;
     }
     </script> 
-    
+
 </body>
 </html>
